@@ -1,0 +1,617 @@
+* {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.sm {
+    display: none;
+}
+
+container {
+    display: block;
+}
+
+/*メディアクエリ*/
+@media only screen and (max-width: 560px) {
+    .pc {
+        display: none;
+    }
+
+    .sm {
+        display: flex;
+    }
+}
+
+
+/*header*/
+header {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+header .menu {
+    position: fixed;
+    width: 290px;
+    gap: 25px;
+    top: 40px;
+    right: max(calc((100vw - 2200px) / 2 + 20px), 20px);
+    height: auto;
+    z-index: 900;
+}
+
+header .menu .circle {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: solid 2px;
+    text-align: center;
+    line-height: 75px;
+}
+
+header .menu ul li {
+    gap: 25px;
+    color: #974DA4;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+header .menu ul li:hover {
+    color: black;
+    background-color: #974DA4;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+#check {
+    display: none;
+}
+
+/*メディアクエリ*/
+@media only screen and (max-width: 840px) {
+    header {
+        max-width: 90%;
+    }
+}
+
+/*メディアクエリ*/
+@media only screen and (max-width: 560px) {
+    .btn {
+        position: fixed;
+        top: 40px;
+        right: 20px;
+        width: 35px;
+        height: 25px;
+        cursor: pointer;
+        z-index: 1000;
+        transition: top .5s ease;
+    }
+
+    .btn span,
+    .btn span::before,
+    .btn span::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: black;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+
+    .btn span::before {
+        top: -10px;
+    }
+
+    .btn span::after {
+        top: 10px;
+    }
+
+
+    #check:checked~.btn span {
+        background-color: transparent;
+    }
+
+    #check:checked~.btn span::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    #check:checked~.btn span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    header .menu {
+        width: 100%;
+        height: 275px;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        z-index: 4;
+        background-color: black;
+        color: white;
+        display: flex;
+        justify-content: center;
+        transition: top .5s ease;
+        align-items: center;
+    }
+
+    header .menu ul {
+        margin: 0;
+        padding: 0;
+        border-top: white 1px solid;
+        width: 100vw;
+    }
+
+    header .menu ul li {
+        text-align: left;
+        padding: 20px 60px;
+        border-bottom: 1px solid white;
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    header .menu ul li:hover {
+        text-decoration: none;
+        border-radius: 0;
+    }
+
+    header .menu ul li a {
+        position: relative;
+        width: 100%;
+    }
+
+    #check:checked~.menu {
+        top: 0;
+    }
+
+    #check:checked~.btn {
+        top: 275px;
+    }
+
+    #check:checked~.white {
+        position: fixed;
+        top: 0;
+    }
+
+}
+
+
+/*third*/
+.third {
+    width: 100%;
+    margin: 150px auto 0;
+    text-align: center;
+}
+
+.third .about {
+    width: 90%;
+    max-width: 1440px;
+}
+
+.third .about h1 {
+    font-size: 70px;
+    text-align: center;
+    margin: 20px 10px;
+}
+
+.third .about img {
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px 0;
+}
+
+/*メディアクエリ*/
+@media only screen and (max-width: 840px) {
+    .third .about h1 {
+        font-size: 50px;
+    }
+}
+
+
+/*メディアクエリ*/
+@media only screen and (max-width: 560px) {
+    .third .about h1 {
+        font-size: 30px;
+    }
+}
+
+
+/*me*/
+.third .me {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.third .me .flex h2 {
+    font-size: 50px;
+    padding: 20px;
+}
+
+.third .me .flex .name {
+    font-size: 18px;
+}
+
+.third .me .flex {
+    width: 80%;
+}
+
+.third .me .flex .empty {
+    width: 30%;
+}
+
+.third .me .text p {
+    text-align: left;
+    width: 70%;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 20px;
+}
+
+/*メディアクエリ*/
+@media only screen and (max-width: 840px) {
+    .third .me {
+        width: 100%;
+        padding: 20px 0;
+        margin: 0px auto;
+    }
+
+    .third .me .flex {
+        width: 90%;
+    }
+
+    .third .me .flex h2 {
+        font-size: 30px;
+        padding: 10px;
+    }
+
+    .third .me .flex p {
+        font-size: 18px;
+    }
+
+    .third .me .flex .name {
+        font-size: 14px;
+    }
+
+    .third .me .text p {
+        text-align: left;
+        width: 100%;
+        font-size: 16px;
+        line-height: 24px;
+        padding: 0 20px;
+    }
+}
+
+
+/*メディアクエリ*/
+@media only screen and (max-width: 560px) {
+
+    .third .me {
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    .third .me .flex h2 {
+        font-size: 28px;
+        padding: 10px;
+    }
+
+    .third .me .flex .name {
+        font-size: 12px;
+    }
+
+    .third .me .text p {
+        font-size: 14px;
+        padding: 0 20px;
+        line-height: 20px;
+    }
+}
+
+/*strength*/
+.third .strength {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.third .strength .flex h2 {
+    font-size: 50px;
+    padding: 20px;
+}
+
+.third .strength .flex .name {
+    font-size: 18px;
+}
+
+.third .strength .flex {
+    width: 80%;
+}
+
+.third .strength .flex .empty {
+    width: 30%;
+}
+
+.third .strength .right {
+    text-align: left;
+    width: 70%;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 20px;
+}
+
+.third .strength .right .title {
+    text-align: left;
+    font-size: 22px;
+    line-height: 30px;
+    padding: 0 20px;
+}
+
+.third .strength .right .text {
+    text-align: left;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 0 20px;
+    word-break: break-all;
+}
+
+
+/*メディアクエリ*/
+@media only screen and (max-width: 840px) {
+    .third .strength {
+        width: 100%;
+        padding: 20px 0;
+        margin: 30px auto;
+    }
+
+    .third .strength .flex {
+        width: 90%;
+    }
+
+    .third .strength .flex h2 {
+        font-size: 30px;
+        padding: 10px;
+    }
+
+    .third .strength .flex p {
+        font-size: 18px;
+    }
+
+    .third .strength .flex .name {
+        font-size: 14px;
+    }
+
+    .third .strength .right {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .third .strength .right .title {
+        text-align: left;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .third .strength .right .text {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+
+@media only screen and (max-width: 560px) {
+
+    .third .strength {
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    .third .strength .flex h2 {
+        font-size: 28px;
+        padding: 20px 10px;
+    }
+
+    .third .strength .flex .name {
+        font-size: 12px;
+    }
+
+    .third .strength .right .title {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .third .strength .right .text {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+
+/*six-pieces*/
+.third .six-pieces {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.third .six-pieces .flex h2 {
+    font-size: 50px;
+    padding: 20px;
+}
+
+.third .six-pieces .flex .name {
+    font-size: 18px;
+}
+
+.third .six-pieces .flex {
+    width: 80%;
+}
+
+.third .six-pieces .flex .empty {
+    width: 30%;
+}
+
+
+.grid {
+    width: 80%;
+    padding: 30px 20px;
+    display: grid;
+    max-width: 1200px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.grid .one {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.grid .one img {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+}
+
+.grid .one .title {
+    padding: 10px;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+
+
+/*メディアクエリ*/
+@media only screen and (max-width: 840px) {
+    .third .six-pieces {
+        width: 100%;
+        padding: 20px 0;
+        margin: 30px auto;
+    }
+
+    .third .six-pieces .flex {
+        width: 90%;
+    }
+
+    .third .six-pieces .flex h2 {
+        font-size: 30px;
+        padding: 10px;
+    }
+
+    .third .six-pieces .flex p {
+        font-size: 18px;
+    }
+
+    .third .six-pieces .flex .name {
+        font-size: 14px;
+    }
+
+    .grid {
+        width: 90%;
+    }
+
+    .grid .one .title {
+        padding: 10px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+
+    .third .six-pieces {
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    .third .six-pieces .flex h2 {
+        font-size: 28px;
+        padding: 20px 10px;
+    }
+
+    .third .six-pieces .flex .name {
+        font-size: 12px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid .one .title {
+        padding: 10px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+
+/*footer*/
+footer .menu {
+    max-width: 1440px;
+    margin: 50px auto;
+    padding: 0 10px;
+}
+
+footer .menu ul {
+    padding-top: 20px;
+    border-top: solid 2px black;
+}
+
+footer .menu ul li {
+    font-size: 14px;
+    padding: 0 80px;
+    line-height: 30px;
+}
+
+footer .last {
+    display: block;
+    font-size: 12px;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+
+/*メディアクエリ*/
+@media only screen and (max-width: 840px) {
+    footer .menu {
+        margin: 30px auto;
+    }
+
+    footer .menu ul li {
+        padding: 0 20px;
+    }
+}
+
+/*メディアクエリ*/
+@media only screen and (max-width: 840px) {
+    footer .menu {
+        margin: 10px 0;
+    }
+
+    footer .menu ul {
+        padding-top: 20px;
+        border-top: solid 2px black;
+    }
+}
